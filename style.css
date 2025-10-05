@@ -1,0 +1,624 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .config-panel, .preview-panel {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .config-panel {
+            max-width: 450px;
+        }
+        
+        .panel-header {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .panel-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #a8c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .panel-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+        
+        .panel-content {
+            padding: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #a8c0ff;
+            box-shadow: 0 0 0 2px rgba(168, 192, 255, 0.3);
+        }
+        
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-button {
+            padding: 18px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+        }
+        
+        .social-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .social-button:hover::before {
+            opacity: 1;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-button i {
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+        
+        /* Platform-specific colors */
+        .telegram {
+            background: linear-gradient(135deg, #0088cc, #34b7f1);
+        }
+        
+        .youtube {
+            background: linear-gradient(135deg, #ff0000, #ff6b6b);
+        }
+        
+        .instagram {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+        }
+        
+        .facebook {
+            background: linear-gradient(135deg, #1877f2, #3b5998);
+        }
+        
+        .twitter {
+            background: linear-gradient(135deg, #1da1f2, #1da1f2);
+        }
+        
+        .linkedin {
+            background: linear-gradient(135deg, #0077b5, #0077b5);
+        }
+        
+        .discord {
+            background: linear-gradient(135deg, #5865f2, #5865f2);
+        }
+        
+        .tiktok {
+            background: linear-gradient(135deg, #000000, #69c9d0, #ee1d52);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25d366, #25d366);
+        }
+        
+        .reddit {
+            background: linear-gradient(135deg, #ff4500, #ff4500);
+        }
+        
+        .pinterest {
+            background: linear-gradient(135deg, #bd081c, #bd081c);
+        }
+        
+        .snapchat {
+            background: linear-gradient(135deg, #fffc00, #fffc00);
+            color: #000 !important;
+        }
+        
+        .snapchat i {
+            color: #000;
+        }
+        
+        .download {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        
+        .default {
+            background: linear-gradient(135deg, #6c757d, #6c757d);
+        }
+        
+        .checked {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #27ae60;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: scale(0.8);
+        }
+        
+        .social-button.completed .checked {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .social-button.disabled {
+            background: rgba(255, 255, 255, 0.05);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .social-button.disabled:hover {
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-button.disabled::before {
+            display: none;
+        }
+        
+        .progress-container {
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .progress-text {
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 8px;
+        }
+        
+        .download-message {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 12px;
+            color: #2ecc71;
+            font-weight: 500;
+            display: none;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .buttons-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 10px;
+        }
+        
+        .buttons-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .buttons-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .buttons-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        
+        .icon-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .icon-option {
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .icon-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .icon-option.selected {
+            background: rgba(168, 192, 255, 0.2);
+            border-color: #a8c0ff;
+        }
+        
+        .icon-option i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .generate-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .config-panel, .preview-panel {
+                max-width: 100%;
+            }
+        }
+        
+        /* Final page styles (when config is loaded) */
+        .final-page {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .final-page .header {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-page .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #a8c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .final-page .header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-weight: 300;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        .final-page .content {
+            padding: 40px 30px;
+        }
+        
+        .final-page .instructions {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-page .instructions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+        }
+        
+        .final-page .instructions h2 {
+            color: white;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .final-page .instructions p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        
+        .final-page .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+        
+        .final-page .social-button {
+            padding: 22px 25px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .final-page .social-button i {
+            font-size: 1.8rem;
+            width: 40px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .final-page .social-button:hover i {
+            transform: scale(1.2);
+        }
+        
+        .final-page .checked {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #27ae60;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            transform: scale(0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .final-page .social-button.completed .checked {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .final-page .social-button.disabled {
+            background: rgba(255, 255, 255, 0.05);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .final-page .progress-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .final-page .progress-text {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .final-page .progress-bar {
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .final-page .progress {
+            height: 100%;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-page .download-message {
+            text-align: center;
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 16px;
+            color: #2ecc71;
+            font-weight: 500;
+            display: none;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hidden {
+            display: none;
+        }

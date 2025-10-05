@@ -153,8 +153,9 @@
             position: relative;
             overflow: hidden;
             border: none;
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 15px;
         }
         
@@ -183,68 +184,6 @@
             font-size: 1.5rem;
             width: 30px;
             text-align: center;
-        }
-        
-        /* Platform-specific colors */
-        .telegram {
-            background: linear-gradient(135deg, #0088cc, #34b7f1);
-        }
-        
-        .youtube {
-            background: linear-gradient(135deg, #ff0000, #ff6b6b);
-        }
-        
-        .instagram {
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-        }
-        
-        .facebook {
-            background: linear-gradient(135deg, #1877f2, #3b5998);
-        }
-        
-        .twitter {
-            background: linear-gradient(135deg, #1da1f2, #1da1f2);
-        }
-        
-        .linkedin {
-            background: linear-gradient(135deg, #0077b5, #0077b5);
-        }
-        
-        .discord {
-            background: linear-gradient(135deg, #5865f2, #5865f2);
-        }
-        
-        .tiktok {
-            background: linear-gradient(135deg, #000000, #69c9d0, #ee1d52);
-        }
-        
-        .whatsapp {
-            background: linear-gradient(135deg, #25d366, #25d366);
-        }
-        
-        .reddit {
-            background: linear-gradient(135deg, #ff4500, #ff4500);
-        }
-        
-        .pinterest {
-            background: linear-gradient(135deg, #bd081c, #bd081c);
-        }
-        
-        .snapchat {
-            background: linear-gradient(135deg, #fffc00, #fffc00);
-            color: #000 !important;
-        }
-        
-        .snapchat i {
-            color: #000;
-        }
-        
-        .download {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-        }
-        
-        .default {
-            background: linear-gradient(135deg, #6c757d, #6c757d);
         }
         
         .checked {
@@ -533,8 +472,9 @@
             position: relative;
             overflow: hidden;
             border: none;
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .final-page .social-button i {
@@ -546,6 +486,26 @@
         
         .final-page .social-button:hover i {
             transform: scale(1.2);
+        }
+        
+        .final-page .telegram {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.2), rgba(52, 183, 241, 0.2));
+            border: 1px solid rgba(0, 136, 204, 0.3);
+        }
+        
+        .final-page .youtube {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 107, 107, 0.2));
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .final-page .instagram {
+            background: linear-gradient(135deg, rgba(131, 58, 180, 0.2), rgba(253, 29, 29, 0.2), rgba(252, 176, 69, 0.2));
+            border: 1px solid rgba(131, 58, 180, 0.3);
+        }
+        
+        .final-page .download {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.2), rgba(46, 204, 113, 0.2));
+            border: 1px solid rgba(39, 174, 96, 0.3);
         }
         
         .final-page .checked {
@@ -646,53 +606,53 @@
             </div>
             
             <div class="panel-content">
-                <div class="form-group">
-                    <label for="platformName">Platform Name</label>
-                    <input type="text" id="platformName" class="form-control" placeholder="e.g., Telegram, YouTube, Instagram">
-                </div>
+                
                 
                 <div class="form-group">
-                    <label>Select Platform</label>
+                    <label>Select Icon</label>
                     <div class="icon-selector">
-                        <div class="icon-option selected" data-icon="fab fa-telegram" data-platform="telegram">
+                        <div class="icon-option selected" data-icon="fab fa-telegram">
                             <i class="fab fa-telegram"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-youtube" data-platform="youtube">
+                        <div class="icon-option" data-icon="fab fa-youtube">
                             <i class="fab fa-youtube"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-instagram" data-platform="instagram">
+                        <div class="icon-option" data-icon="fab fa-instagram">
                             <i class="fab fa-instagram"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-facebook" data-platform="facebook">
+                        <div class="icon-option" data-icon="fab fa-facebook">
                             <i class="fab fa-facebook"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-twitter" data-platform="twitter">
+                        <div class="icon-option" data-icon="fab fa-twitter">
                             <i class="fab fa-twitter"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-linkedin" data-platform="linkedin">
+                        <div class="icon-option" data-icon="fab fa-linkedin">
                             <i class="fab fa-linkedin"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-discord" data-platform="discord">
+                        <div class="icon-option" data-icon="fab fa-discord">
                             <i class="fab fa-discord"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-tiktok" data-platform="tiktok">
+                        <div class="icon-option" data-icon="fab fa-tiktok">
                             <i class="fab fa-tiktok"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-whatsapp" data-platform="whatsapp">
+                        <div class="icon-option" data-icon="fab fa-whatsapp">
                             <i class="fab fa-whatsapp"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-reddit" data-platform="reddit">
+                        <div class="icon-option" data-icon="fab fa-reddit">
                             <i class="fab fa-reddit"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-pinterest" data-platform="pinterest">
+                        <div class="icon-option" data-icon="fab fa-pinterest">
                             <i class="fab fa-pinterest"></i>
                         </div>
-                        <div class="icon-option" data-icon="fab fa-snapchat" data-platform="snapchat">
+                        <div class="icon-option" data-icon="fab fa-snapchat">
                             <i class="fab fa-snapchat"></i>
                         </div>
                     </div>
                 </div>
-                
+                <div class="form-group">
+                    <label for="platformName">Platform Name</label>
+                    <input type="text" id="platformName" class="form-control" placeholder="e.g., Telegram, YouTube, Instagram">
+                </div>
                 <div class="form-group">
                     <label for="buttonUrl">Button URL</label>
                     <input type="url" id="buttonUrl" class="form-control" placeholder="https://example.com/your-profile">
@@ -824,7 +784,6 @@
             // State
             let buttons = [];
             let selectedIcon = 'fab fa-telegram';
-            let selectedPlatform = 'telegram';
             let completedButtons = 0;
             let finalCompletedButtons = 0;
             
@@ -854,25 +813,6 @@
                     iconOptions.forEach(opt => opt.classList.remove('selected'));
                     this.classList.add('selected');
                     selectedIcon = this.getAttribute('data-icon');
-                    selectedPlatform = this.getAttribute('data-platform');
-                    
-                    // Auto-fill platform name based on selection
-                    const platformNames = {
-                        'telegram': 'Telegram',
-                        'youtube': 'YouTube',
-                        'instagram': 'Instagram',
-                        'facebook': 'Facebook',
-                        'twitter': 'Twitter',
-                        'linkedin': 'LinkedIn',
-                        'discord': 'Discord',
-                        'tiktok': 'TikTok',
-                        'whatsapp': 'WhatsApp',
-                        'reddit': 'Reddit',
-                        'pinterest': 'Pinterest',
-                        'snapchat': 'Snapchat'
-                    };
-                    
-                    platformNameInput.value = platformNames[selectedPlatform] || '';
                 });
             });
             
@@ -890,7 +830,6 @@
                 buttons.push({
                     name,
                     icon: selectedIcon,
-                    platform: selectedPlatform,
                     url
                 });
                 
@@ -909,7 +848,8 @@
                 
                 buttons.forEach((button, index) => {
                     const buttonElement = document.createElement('div');
-                    buttonElement.className = `social-button ${button.platform}`;
+                    buttonElement.className = 'social-button';
+                    buttonElement.style.background = 'rgba(255, 255, 255, 0.05)';
                     buttonElement.innerHTML = `
                         <i class="${button.icon}"></i>
                         <span>${button.name}</span>
@@ -935,7 +875,7 @@
                 
                 buttons.forEach((button, index) => {
                     const buttonElement = document.createElement('div');
-                    buttonElement.className = `social-button ${button.platform}`;
+                    buttonElement.className = 'social-button';
                     buttonElement.innerHTML = `
                         <i class="${button.icon}"></i>
                         <span>Join ${button.name}</span>
@@ -1079,7 +1019,7 @@
                 // Add social media buttons
                 buttons.forEach((button, index) => {
                     const buttonElement = document.createElement('div');
-                    buttonElement.className = `social-button ${button.platform}`;
+                    buttonElement.className = 'social-button';
                     buttonElement.innerHTML = `
                         <i class="${button.icon}"></i>
                         <span>Join ${button.name}</span>
